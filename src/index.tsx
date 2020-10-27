@@ -1,7 +1,12 @@
-import * as React from "react";
+import React from 'react'
+import { CalendarProvider as CalendarContextProvider } from './context'
 
 const Calendar: React.FC = () => {
-  return <div>Calendar</div>;
-};
+  return (
+    <CalendarContextProvider>
+      <div></div>
+    </CalendarContextProvider>
+  )
+}
 
-export default Calendar;
+export default Calendar
