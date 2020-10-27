@@ -1,0 +1,41 @@
+{
+  "name": "react-eventful-calendar",
+  "version": "1.0.0",
+  "description": "React calendar component",
+  "main": "build/index.js",
+  "module": "build/index.es.js",
+  "jsnext:main": "build/index.es.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rollup -c"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dm1tr1y147/react-eventful-calendar.git"
+  },
+  "author": "dm1sh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Dm1tr1y147/react-eventful-calendar.git"
+  },
+  "homepage": "https://github.com/Dm1tr1y147/react-eventful-calendar.git#readme",
+  "peerDependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.5",
+    "@types/react": "^16.9.53",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "rollup": "^2.32.1",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-typescript2": "^0.28.0",
+    "typescript": "^4.0.5"
+  },
+  "files": [
+    "build"
+  ]
+}
