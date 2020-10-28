@@ -1,33 +1,40 @@
-import React, { createContext, Dispatch, SetStateAction, useState } from 'react'
+import React, { createContext, useEffect, useState } from 'react'
 
-type CalendarContextStateT = {
-  month: number
-  year: number
-  firstDayOfMonth: number
-  lastDayOfMonth: number
-  numberOfDays: number
-}
-
-type CalendarContextT = {
-  state: CalendarContextStateT
-  setState?: Dispatch<SetStateAction<CalendarContextStateT>>
-}
+import { CalendarContextStateT, CalendarContextT } from './types'
+import { getCurrentMonth } from './utils'
 
 const initialCalendarContextState: CalendarContextStateT = {
-  month: 1,
+  month: {
+    number: 1,
+    firstDayOfWeek: 1,
+    lastDayOfWeek: 1,
+    numberOfDays: 1,
+    previousMonthLength: 1,
+  },
   year: 1,
-  firstDayOfMonth: 0,
-  lastDayOfMonth: 0,
-  numberOfDays: 0,
+  day: 1,
 }
 
-export const CalendarContext = createContext<CalendarContextT>({
+const CalendarContext = createContext<CalendarContextT>({
   state: initialCalendarContextState,
 })
 
-export const CalendarProvider: React.FC = ({ children }) => {
+const CalendarProvider: React.FC = ({ children }) => {
   const [state, setState] = useState<CalendarContextStateT>(
     initialCalendarContextState
+  )
+
+  const [now] = useState<Date>(new Date())
+
+  useEffect(
+    () =>
+      setState((prev) => ({
+        ...prev,
+        month: getCurrentMonth(now),
+        year: now.getFullYear(),
+        day: now.getDate(),
+      })),
+    []
   )
 
   return (
@@ -36,3 +43,5 @@ export const CalendarProvider: React.FC = ({ children }) => {
     </CalendarContext.Provider>
   )
 }
+
+export { CalendarContext, CalendarProvider }
