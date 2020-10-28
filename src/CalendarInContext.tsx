@@ -43,7 +43,16 @@ const CalendarInContext: React.FC<ICalendarProps> = ({ eventList }) => {
   }, [context.state])
 
   return (
-    <div>
+    <div
+      style={{
+        height: '100%',
+        width: '100%',
+        display: 'grid',
+        gridTemplateColumns: 'repeat(7, 1fr)',
+        gridTemplateRows: 'repeat(5, 1fr)',
+        gap: '5px'
+      }}
+    >
       {monthDaysState.map((day, dayIndex) => (
         <Day
           key={dayIndex}
