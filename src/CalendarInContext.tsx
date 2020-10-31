@@ -1,69 +1,18 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React from 'react'
 
-import Day from './Day'
-import { CalendarContext } from './context'
-import { DayT, ICalendarProps } from './types'
+import { useCalendarContext } from './hooks'
+import { Viewers } from './types'
+import { DayView, MonthView } from './views'
+import styles from './views/styles'
 
-const CalendarInContext: React.FC<ICalendarProps> = ({ eventList }) => {
-  const context = useContext(CalendarContext)
-
-  const { month } = context.state
-
-  const [monthDaysState, setMonthDaysState] = useState<DayT[]>([])
-
-  useEffect(() => {
-    const daysNumbersArray = [
-      Array.from(
-        Array(month.firstDayOfWeek - 1 > 0 ? month.firstDayOfWeek - 1 : 0)
-      ).map(
-        (_, index) =>
-          month.previousMonthLength - month.firstDayOfWeek + index + 2
-      ),
-      Array.from(Array(month.numberOfDays)).map((_, index) => index + 1),
-      Array.from(Array(7 - month.lastDayOfWeek)).map((_, index) => index + 1),
-    ]
-
-    setMonthDaysState(
-      daysNumbersArray.flatMap((month, index) =>
-        month.map<DayT>((dayNumber) => ({
-          number: dayNumber,
-          events: eventList.filter((event) => {
-            if (index != 1) return false
-
-            const eventDate = new Date(event.startDate)
-
-            return (
-              eventDate.getDate() == dayNumber &&
-              eventDate.getMonth() == context.state.month.number
-            )
-          }),
-        }))
-      )
-    )
-  }, [context.state])
+const CalendarInContext: React.FC = () => {
+  const { state: calendar } = useCalendarContext()
+  const { currentViewer } = calendar
 
   return (
-    <div
-      style={{
-        height: '100%',
-        width: '100%',
-        display: 'grid',
-        gridTemplateColumns: 'repeat(7, 1fr)',
-        gridTemplateRows: 'repeat(5, 1fr)',
-        gap: '5px'
-      }}
-    >
-      {monthDaysState.map((day, dayIndex) => (
-        <Day
-          key={dayIndex}
-          dayNumber={day.number}
-          events={day.events}
-          shaded={
-            dayIndex < month.firstDayOfWeek - 1 ||
-            dayIndex > month.numberOfDays + month.firstDayOfWeek - 2
-          }
-        />
-      ))}
+    <div style={styles.calendar}>
+      {currentViewer == Viewers.MonthViewer && <MonthView />}
+      {currentViewer == Viewers.DayViewer && <DayView />}
     </div>
   )
 }

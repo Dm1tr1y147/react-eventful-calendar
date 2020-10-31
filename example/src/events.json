@@ -2,7 +2,36 @@
   {
     "id": 1,
     "title": "Test",
-    "startDate": "Wed Oct 28 2020 17:00:00 GMT+0500 (Yekaterinburg Standard Time)",
-    "endDate": "Wed Oct 28 2020 20:00:00 GMT+0500 (Yekaterinburg Standard Time)"
+    "startDate": "Wed Oct 22 2020 17:00:00 GMT+0500 (Yekaterinburg Standard Time)",
+    "endDate": "Wed Oct 22 2020 20:00:00 GMT+0500 (Yekaterinburg Standard Time)",
+    "color": "#e57373"
+  },
+  {
+    "id": 2,
+    "title": "AnotherTest",
+    "startDate": "Wed Oct 22 2020 17:00:00 GMT+0500 (Yekaterinburg Standard Time)",
+    "endDate": "Wed Oct 22 2020 20:00:00 GMT+0500 (Yekaterinburg Standard Time)",
+    "color": "#64b5f6"
+  },
+  {
+    "id": 3,
+    "title": "And finally: third test",
+    "startDate": "Wed Oct 22 2020 17:00:00 GMT+0500 (Yekaterinburg Standard Time)",
+    "endDate": "Wed Oct 22 2020 20:00:00 GMT+0500 (Yekaterinburg Standard Time)",
+    "color": "#81c784"
+  },
+  {
+    "id": 666,
+    "title": "Halloween",
+    "startDate": "Wed Oct 31 2020 00:00:00 GMT+0500 (Yekaterinburg Standard Time)",
+    "endDate": "Wed Nov 1 2020 00:00:00 GMT+0500 (Yekaterinburg Standard Time)",
+    "color": "#ffb74d"
+  },
+  {
+    "id": 4,
+    "title": "Watching film",
+    "startDate": "Wed Oct 31 2020 23:00:00 GMT+0500 (Yekaterinburg Standard Time)",
+    "endDate": "Wed Nov 1 2020 01:00:00 GMT+0500 (Yekaterinburg Standard Time)",
+    "color": "#ffb74d"
   }
 ]
