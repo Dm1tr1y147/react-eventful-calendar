@@ -34,7 +34,16 @@ const MonthView: React.FC = () => {
           number: dayNumber,
           events:
             index == 1
-              ? filterEventsByDay(eventList, dayNumber, monthNumber, yearNumber)
+              ? filterEventsByDay(
+                  eventList,
+                  dayNumber,
+                  monthNumber,
+                  yearNumber
+                ).sort(
+                  (a, b) =>
+                    new Date(a.startDate).getTime() -
+                    new Date(b.startDate).getTime()
+                )
               : [],
         }))
       )

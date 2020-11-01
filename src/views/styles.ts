@@ -6,6 +6,7 @@ const calendar: Style = {
   border: '1px black solid',
   borderRadius: '5px',
   overflow: 'hidden',
+  boxSizing: 'border-box',
 }
 
 // Month header
@@ -20,7 +21,6 @@ const weekdaysListHeader: Style = {
 const monthSwitchHeader: Style = {
   display: 'grid',
   gridTemplateColumns: 'repeat(7, 1fr)',
-  width: '100%',
   gap: '5px',
   backgroundColor: 'black',
   color: 'white',
@@ -99,6 +99,35 @@ const monthDayNumber: Style = {
   margin: '0px',
 }
 
+const dayHeader: Style = {
+  display: 'flex',
+  alignItems: 'center',
+  gap: '5px',
+  backgroundColor: 'black',
+  color: 'white',
+  padding: '5px',
+}
+
+const dayHomeButton: Style = {
+  background: 'none',
+  border: 'none',
+  cursor: 'pointer',
+}
+
+const dayDateBlock: Style = {
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  gap: '5px',
+  flexGrow: 1,
+  marginRight: '25px',
+}
+
+const zeroMP: Style = {
+  margin: '0px',
+  padding: '0px',
+}
+
 const styles = {
   switchMonthButton,
   calendar,
@@ -112,6 +141,10 @@ const styles = {
   monthDayEvent,
   monthDayBottomShade,
   monthDayNumber,
+  dayHomeButton,
+  dayHeader,
+  dayDateBlock,
+  zeroMP,
 }
 
 export default styles

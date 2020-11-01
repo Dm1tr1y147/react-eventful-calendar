@@ -12,8 +12,15 @@ export type UseCalendarSwitchFT = () => (increase: boolean) => void
 
 // Calendar component
 
+/**
+ * Enum for calendar views
+ * @readonly
+ * @enum {number}
+ */
 export enum Viewers {
+  /** Month view */
   MonthViewer,
+  /** Single day view */
   DayViewer,
 }
 
