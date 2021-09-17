@@ -47,7 +47,7 @@ const events = [
 `locale` is an object containing arrays of strings. `monthNames` and `weekdaysNames` are currently supported. Strings in array should be in lowercase. For example:
 ```javascript
 const locale = {
-  monthNames: [
+  weekdaysNames: [
     "sunday",
     "monday",
     "tuesday",
@@ -56,7 +56,7 @@ const locale = {
     "friday",
     "saturday",
   ],
-  weekdaysNames: [
+  monthNames: [
     "january",
     "february",
     "march",
