@@ -4,6 +4,14 @@ It is a React calendar component with events support. It can show events by day 
 
 # Usage example
 
+Install npm packet
+
+```bash
+npm install --save react-eventful-calendar
+```
+
+In code
+
 ```jsx
 import Calendar, { Viewers } from "react-eventful-calendar"
 // ...
